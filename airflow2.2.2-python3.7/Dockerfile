@@ -1,4 +1,4 @@
-ARG BASE_IMG="apache/airflow:2.2.0"
+ARG BASE_IMG="apache/airflow:2.2.2-python3.7"
 FROM $BASE_IMG
 WORKDIR /
 

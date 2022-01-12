@@ -1,5 +1,0 @@
-airflowVersion: 2.2.0
-images:
-  airflow:
-    repository: ferlabcrsj/airflow
-    tag: 2.2.0
