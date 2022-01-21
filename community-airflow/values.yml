@@ -32,7 +32,7 @@ airflow:
     gid: 0
     pullPolicy: IfNotPresent
     pullSecret: ''
-    repository: botekch/airflow
+    repository: ferlabcrsj/airflow
     tag: 2.1.4-python3.8
     uid: 50000
   kubernetesPodTemplate:
@@ -346,7 +346,7 @@ scheduler:
 serviceAccount:
   annotations: {}
   create: true
-  name: ''
+  name: 'spark'
 serviceMonitor:
   enabled: false
   interval: 30s
