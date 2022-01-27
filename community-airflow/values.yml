@@ -419,8 +419,11 @@ workers:
     maxUnavailable: ''
     minAvailable: ''
   podLabels: {}
-  replicas: 1
-  resources: {}
+  replicas: 6
+  resources:
+    requests:
+      memory: "8G"
+      cpu: "2"
   safeToEvict: true
   securityContext: {}
   terminationPeriod: 60
