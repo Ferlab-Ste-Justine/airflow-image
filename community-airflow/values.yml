@@ -30,7 +30,7 @@ airflow:
   fernetKey: 7T512UXSSmBOkpWimFHIVb8jK6lfmSAvx4mO6Arehnc=
   image:
     gid: 0
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     pullSecret: ''
     repository: ferlabcrsj/airflow
     tag: 2.1.4-python3.8
@@ -92,7 +92,7 @@ dags:
       uid: 65533
     maxFailures: 0
     repo: https://github.com/Ferlab-Ste-Justine/unic-dag.git
-    repoSubPath: 'dags'
+    repoSubPath: dags
     resources: {}
     revision: HEAD
     sshKnownHosts: ''
@@ -196,7 +196,7 @@ logs:
     accessMode: ReadWriteMany
     enabled: false
     existingClaim: ''
-    size: 1Gi
+    size: 10Gi
     storageClass: ''
     subPath: ''
 pgbouncer:
@@ -345,8 +345,8 @@ scheduler:
   tolerations: []
 serviceAccount:
   annotations: {}
-  create: true
-  name: 'spark'
+  create: false
+  name: spark
 serviceMonitor:
   enabled: false
   interval: 30s
@@ -402,7 +402,7 @@ workers:
   annotations: {}
   autoscaling:
     enabled: false
-    maxReplicas: 2
+    maxReplicas: 4
     metrics: []
   celery:
     gracefullTermination: false
@@ -422,8 +422,8 @@ workers:
   replicas: 6
   resources:
     requests:
-      memory: "8G"
-      cpu: "2"
+      cpu: '1'
+      memory: 6G
   safeToEvict: true
   securityContext: {}
   terminationPeriod: 60
