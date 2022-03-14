@@ -23,7 +23,12 @@ airflow:
   defaultTolerations: []
   executor: CeleryExecutor
   extraContainers: []
-  extraEnv: []
+  extraEnv:
+    - name: AIRFLOW__WEBSERVER__SECRET_KEY
+      valueFrom:
+        secretKeyRef:
+          name: airflow-webserver-secret-key
+          key: value
   extraPipPackages: []
   extraVolumeMounts: []
   extraVolumes: []
@@ -75,7 +80,7 @@ airflow:
   variables: []
   variablesTemplates: {}
   variablesUpdate: true
-  webserverSecretKey: THIS IS UNSAFE!
+  webserverSecretKey: "THIS IS UNSAFE!"
 dags:
   gitSync:
     branch: master
