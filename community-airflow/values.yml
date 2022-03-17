@@ -1,6 +1,18 @@
 airflow:
-  config: {}
-  connections: []
+  config:
+    AIRFLOW__LOGGING__REMOTE_LOGGING: "True"
+    AIRFLOW__LOGGING__REMOTE_BASE_LOG_FOLDER: "s3://airflow-prd/airflow/logs"
+    AIRFLOW__LOGGING__REMOTE_LOG_CONN_ID: "minio_airflow"
+  connections:
+    ## see docs: https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/connections/aws.html
+    - id: minio_airflow
+      type: aws
+      description: Minio airflow
+      extra: |-
+        { "aws_access_key_id": "airflow",
+          "aws_secret_access_key": "r9JKW9DmQ6YKsSKzrBQ2D4xF",
+          "region_name":"None",
+          "host":"https://minio-unic.infojutras.com"}
   connectionsTemplates: {}
   connectionsUpdate: true
   dbMigrations:
@@ -424,7 +436,7 @@ workers:
     maxUnavailable: ''
     minAvailable: ''
   podLabels: {}
-  replicas: 6
+  replicas: 4
   resources:
     requests:
       cpu: '1'
