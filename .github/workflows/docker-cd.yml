@@ -21,9 +21,9 @@ jobs:
         run: docker push ferlabcrsj/airflow:2.1.4-python3.8
         working-directory: airflow2.1.4-python3.8
 
-      - name: Build image airflow2.2.2-python3.7
-        run: docker build -t ferlabcrsj/airflow:2.2.2-python3.7 .
-        working-directory: airflow2.2.2-python3.7
-      - name: Push image airflow2.2.2-python3.7
-        run: docker push ferlabcrsj/airflow:2.2.2-python3.7
-        working-directory: airflow2.2.2-python3.7
+      - name: Build image airflow:2.2.5-python3.8
+        run: docker build -t ferlabcrsj/airflow:2.2.5-python3.8 .
+        working-directory: airflow2.2.5-python3.8
+      - name: Push image airflow:2.2.5-python3.8
+        run: docker push ferlabcrsj/airflow:2.2.5-python3.8
+        working-directory: airflow2.2.5-python3.8
