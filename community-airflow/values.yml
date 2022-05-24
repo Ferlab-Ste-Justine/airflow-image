@@ -34,12 +34,7 @@ airflow:
   defaultTolerations: []
   executor: CeleryExecutor
   extraContainers: []
-  extraEnv:
-    - name: AIRFLOW__WEBSERVER__SECRET_KEY
-      valueFrom:
-        secretKeyRef:
-          key: value
-          name: airflow-webserver-secret-key
+  extraEnv: []
   extraPipPackages: []
   extraVolumeMounts: []
   extraVolumes: []
