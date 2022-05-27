@@ -2,16 +2,6 @@ apiVersion: v1
 kind: Secret
 type: Opaque
 metadata:
-  name: github-ssh-key
-  namespace: airflow
-data:
-  id_rsa:
-    <base64_id_rsa>
----
-apiVersion: v1
-kind: Secret
-type: Opaque
-metadata:
   name: github-http-credentials
   namespace: airflow
 data:
@@ -19,12 +9,3 @@ data:
     <base64_username>
   password:
     <base64_token>
----
-apiVersion: v1
-kind: Secret
-type: Opaque
-metadata:
-  name: airflow-webserver-secret-key
-  namespace: airflow
-data:
-  value: <base64_value>
