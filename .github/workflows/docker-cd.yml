@@ -4,7 +4,6 @@ on:
   push:
     tags:
       - 2.1.4-python3*_*
-      - 2.2.5-python3*_*
 
 jobs:
   publish-notebook:
